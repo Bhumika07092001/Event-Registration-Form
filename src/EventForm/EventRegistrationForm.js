@@ -63,12 +63,17 @@ const EventRegistrationForm = () => {
           <p>
             <strong>Age:</strong> {formData.age}
           </p>
-          <p>
-            <strong>Attending as guest:</strong> {formData.attendingWithGuest}
-          </p>
-          <p>
-            <strong>Guest Name:</strong> {formData.guestName}
-          </p>
+          {formData.attendingWithGuest === "Yes" ? (
+            <>
+              <p>
+                <strong>Attending as guest:</strong>{" "}
+                {formData.attendingWithGuest}
+              </p>
+              <p>
+                <strong>Guest Name:</strong> {formData.guestName}
+              </p>
+            </>
+          ) : null}
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
